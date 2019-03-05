@@ -1,0 +1,199 @@
+\documentclass{beamer}%[handout][draft]
+
+\mode<presentation>
+{
+ \usetheme{default}
+% general color theme
+ \usecolortheme[RGB={136,201,59}]{structure}
+ \setbeamertemplate{blocks}[rounded]
+% get rid of navigation symbols (symbols in lower right corner)
+ \setbeamertemplate{navigation symbols}{}
+% covered items are transparent (ie items that will be uncovered are visible, but grayed out)
+  \setbeamercovered{dynamic}
+% small caps in
+ \setbeamerfont{frametitle}{shape=\scshape}
+
+}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\usepackage{graphicx}
+
+% colours 
+\definecolor{kiplommon}{RGB}{135,0,82}
+\definecolor{kicyklamen}{RGB}{212,9,99}
+\definecolor{alertpurp}{RGB}{225,70,11}
+\definecolor{graybtitle}{RGB}{220,220,220}
+\definecolor{graybbody}{RGB}{240,240,240}
+\definecolor{sidebartop}{RGB}{190,190,190}
+\definecolor{sidebarbottom}{RGB}{230,230,230}
+\definecolor{scilifelab}{HTML}{88c93b}
+\definecolor{scilifelabdark}{HTML}{38790b}
+\hypersetup{colorlinks,linkcolor=,urlcolor=scilifelabdark}
+
+
+% titel i fet text
+\setbeamerfont{title}{shape=\bf, size=\LARGE}
+\setbeamerfont{institute}{size=\tiny}
+\setbeamerfont{author}{shape=\scshape}
+
+% images used for logo (and first page in this case)
+\pgfdeclareimage[height=1cm]{sll-logo}{img/data-centre-logo.png}
+
+% template for custom titlepage in beamer
+\defbeamertemplate*{title page}{customized}[1][]
+{
+ \bigskip
+ \begin{center}
+ \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par
+ \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+ \end{center}
+ \bigskip
+ \usebeamercolor[fg]{normal text}
+ \begin{center}
+ \usebeamerfont{author}\insertauthor\par
+
+ {\normalfont \scriptsize  linus.ostberg@scilifelab.uu.se}
+ \end{center}
+ \vfill
+ \vfill
+ \vfill
+ \vfill
+ \vfill
+ \begin{columns}
+ \column{0.65\textwidth}
+ \usebeamerfont{institute}\insertinstitute\par
+ \usebeamerfont{date}\insertdate\par
+ \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+ \column{0.35\textwidth}
+ \centering
+ $\begin{array}{cc}
+ \pgfuseimage{sll-logo}\\
+ \end{array}$
+ \end{columns}
+ }
+
+% change color of \alert
+\setbeamercolor{alerted text}{fg=alertpurp}
+
+% change color of subsections in sidebar
+\setbeamercolor{subsection in sidebar}{fg=scilife}
+
+% set width of sidebar
+%\setbeamersize{sidebar right width}
+\setbeamersize{text margin right=0.3cm}
+
+% support for movies
+\usepackage{multimedia}
+
+% support for table entries spanning multiple rows
+\usepackage{multirow}
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[utf8x]{inputenc}
+% \usepackage[T1]{fontenc}
+
+% fancy tables
+\usepackage{booktabs}
+
+% tikz images
+\usepackage{tikz}
+\usetikzlibrary{automata,arrows,shapes,matrix,trees,fit,backgrounds,calc,decorations, decorations.pathreplacing}
+
+%font
+% \usepackage{arev}
+\usepackage{bookman}
+% \setbeamerfont{frametitle}{size=\LARGE}
+
+\subject{Talks}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% blocks...
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{block title}{bg=graybtitle}%bg=background, fg= foreground
+\setbeamercolor{block body}{bg=graybbody}%bg=background, fg= foreground
+\setbeamercolor{block title example}{bg=graybtitle}%bg=background, fg= foreground
+\setbeamercolor{block body example}{bg=graybbody}%bg=background, fg= foreground
+
+% \logo{\pgfuseimage{ki-logo}\pgfuseimage{liu-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection*:
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\title{Python Programming}
+\subtitle{... and FAIR Research}
+
+\author{Linus~Östberg}
+
+\institute{\url{https://github.com/talavis/biomed-bioinf}}
+
+\date{}
+
+\begin{document}
+ \begin{frame}
+  \maketitle
+ \end{frame}
+ 
+ \begin{frame}{FAIR Research}
+  \begin{itemize}
+   \item Findable
+   \item Accessible
+   \item Interoperable
+   \item Reusable
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}{Reusability}
+  \begin{itemize}
+   \item Reusable data
+   \item Reusable analysis tools
+   \item Reproducibility
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}{Programming}
+  \begin{itemize}
+   \item Automate analysis
+   \item Allow easy recalculation if parameters are changed
+   \item Allow others to see exactly what has been done
+  \end{itemize}
+ \end{frame}
+
+ 
+ 
+ \begin{frame}{Python}
+  \begin{itemize}
+   \item<1> Python \url{www.python.org}
+   \item<1> Jupyter \url{www.jupyter.org/}
+   \item<1-2> Anaconda \url{www.anaconda.com/distribution/}
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}{Learning Python}
+  \begin{itemize}
+   \item Two hours is not enough
+   \item Books
+   \item Online courses
+   \item ``Real-life'' courses
+   \item Work on something you want/need
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}{Learning Python}
+  \begin{itemize}
+   \item \url{https://www.coursera.org/courses?query=python}
+   \item \url{https://www.edx.org/learn/python}
+   \item \url{http://rosalind.info/problems/}
+  \end{itemize}
+ \end{frame}
+
+ 
+
+\end{document}
